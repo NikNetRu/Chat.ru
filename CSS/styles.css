@@ -1,0 +1,127 @@
+@charset "utf-8";
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13.01.2019, 16:46:52
+    Author     : Andrey
+*/
+
+/*   Задаём свойства заднего фона*/
+body {
+    background: URL(http://localhost/chat.ru/Img/background.jpg); 
+    background-size : 100%;
+}
+
+
+/*   обычный текст */
+.commontext
+{
+    font-family: fantasy, Georgia, 'Times New Roman', Times;
+    
+    color: white;
+    font-size: 200%;
+}
+
+/* Блок Пользователь */
+#user {position: absolute; /* Абсолютное позиционирование */
+    bottom: 60%; /* Положение от нижнего края */
+    right:53%; /* Положение от правого края */
+    line-height: 5px;}
+
+/* Блок ввод пользователя */
+#insertUser {position: absolute; /* Абсолютное позиционирование */
+    bottom: 55%; /* Положение от нижнего края */
+    right: 50%; /* Положение от правого края */
+    line-height: 5px;
+    height: 20px;}
+
+/* Блок Пароля */
+#password {position: absolute; /* Абсолютное позиционирование */
+    bottom: 52%; /* Положение от нижнего края */
+    right:51%; /* Положение от правого края */
+    line-height: 5px;}
+
+/* Блок ввода Пароля */
+#insertPassword {position: absolute; /* Абсолютное позиционирование */
+    bottom: 47%; /* Положение от нижнего края */
+    right: 50%; /* Положение от правого края */
+    line-height: 5px;
+    height: 20px;}
+
+/* Блок ввода Пароля */
+#enter {position: absolute; /* Абсолютное позиционирование */
+    bottom: 42%; /* Положение от нижнего края */
+    right: 50%; /* Положение от правого края */
+    line-height: 5px;
+    height: 40px;
+    width: 174px;
+    font-family: fantasy, Georgia, 'Times New Roman', Times;
+    color: white;
+    font-size: 200%;
+    background-color: rgb(0, 191, 255);
+    }
+    
+    #imageLoad {
+        position:absolute; /* Абсолютное позиционирование */
+    bottom: 50%; /* Положение от нижнего края */
+    right: 53%; /* Положение от правого края */
+    }
+    
+   
+    
+    #messanger {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 13%; /* Положение от нижнего края */
+    right: 38%; /* Положение от правого края */
+    background-color: whitesmoke;
+    height: 800px;
+    width: 600px;
+    background-color: rgb(0, 191, 255);
+    font-size: 2;
+    font-family: fantasy, Georgia, 'Times New Roman', Times;
+    overflow-x: no-display;
+    overflow-y: scroll;
+    margin: 10px;
+    border-radius: 10px 10px 10px 10px;
+    word-wrap: break-word;
+    
+    }
+    
+    #message {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10%; /* Положение от нижнего края */
+    right: 40%; /* Положение от правого края */
+    line-height: 15px;
+    height: 30px;
+    width: 570px;
+    background-color: floralwhite;
+    }
+    
+    #buttonSend {
+        position: absolute; /* Абсолютное позиционирование */
+    bottom: 10%; /* Положение от нижнего края */
+    right: 37%; /* Положение от правого края */
+    line-height: 5px;
+    height: 35px;
+    width: 60px;
+    background-color: floralwhite;
+    font-family: fantasy, Georgia, 'Times New Roman', Times;
+     font-size: 100%;
+     border-radius: 5px 5px 5px 5px;
+    }
+    
+    #registration{
+        position: absolute; /* Абсолютное позиционирование */
+    bottom: 37%; /* Положение от нижнего края */
+    right: 50%; /* Положение от правого края */
+    line-height: 5px;
+    height: 40px;
+    width: 174px;
+    font-family: fantasy, Georgia, 'Times New Roman', Times;
+    color: white;
+    font-size: 170%;
+    background-color: rgb(0, 191, 255);
+    }
