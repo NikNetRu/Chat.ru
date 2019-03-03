@@ -5,7 +5,7 @@ if ($_COOKIE['user'])
     $date = date("Y-m-d H:i:s"); 
     $link = mysqli_connect("127.0.0.1", "root", "", "chat");
     mysqli_set_charset($link, 'utf-8');
-     $query = "UPDATE `users` SET Online`=['$date'] WHERE `Name` = ('$thisUser')";
+     $query = "UPDATE `users` SET `Online`=['$date'] WHERE `Name` = ('$thisUser')";
     $request = mysqli_query($link, $query);
     }
 /* 
