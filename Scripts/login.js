@@ -151,19 +151,18 @@
                       });
     }
                             
-      
+      /**
  function whoOnline ()
        {
            $.ajax
                     ({
                             url: "whoOnline.php",
                             type: "POST",
-                            dataType: "html",
-                            sucess: console.log(responseText)
+                            dataType: "html"
                       });
     }
         
-         
+         **/
          
         function validateEmail ()
         {
