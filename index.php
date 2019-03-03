@@ -35,13 +35,13 @@ and open the template in the editor.
                 updateThisUserOnline ();
              }, 60000); 
              
-             
+            /** 
              setInterval (function ()      // Периодически (60 сек) обновляет данные о том что пользователь онлайн
              {              
                 whoOnline ();
              }, 60000); 
              
-             
+             **/
              
              setInterval(function ()        // Периодически обновляет чат - берёт данные из файла logs.html
                          {
