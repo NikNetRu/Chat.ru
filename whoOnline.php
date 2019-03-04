@@ -4,9 +4,9 @@
   $querry = "SELECT ID FROM users WHERE online BETWEEN STR_TO_DATE('2019-01-01 00:00:00', '%Y-%m-%d %H:%i:%s') AND STR_TO_DATE('2021-03-04 23:59:59', '%Y-%m-%d %H:%i:%s')";
   $result = mysqli_query($link, $querry);
   $resultP = mysqli_fetch_array($result);
-  foreach ($resultP as &$stroke)
+  foreach ($resultP as $key => $key)
     {
-      echo "User $stroke[ID] $resultP[Name]";
+      echo "User $key $key";
     }
   $db = mysqli_close($link); 
 
