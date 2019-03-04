@@ -5,7 +5,7 @@
   AND STR_TO_DATE('2021-03-04 23:59:59', '%Y-%m-%d %H:%i:%s')";
   $result = mysqli_query($link, $querry);
   $resultP = mysqli_fetch_array($result);
-  foreach ($resultP as &$stroke)
+  foreach ($resultP as $stroke)
     {
       echo $stroke;
       echo 'Test   ';
