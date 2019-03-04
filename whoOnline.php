@@ -6,8 +6,7 @@
   $resultP = mysqli_fetch_array($result);
   foreach ($resultP as $stroke)
     {
-      echo $stroke;
-      echo 'Test 2  ';
+      echo "User $stroke ";
     }
   $db = mysqli_close($link); 
 
