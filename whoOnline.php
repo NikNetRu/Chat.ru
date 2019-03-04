@@ -7,7 +7,7 @@
   foreach ($resultP as $stroke)
     {
       echo $stroke;
-      echo 'Test   ';
+      echo 'Test 2  ';
     }
   $db = mysqli_close($link); 
 
