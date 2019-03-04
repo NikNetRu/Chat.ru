@@ -6,7 +6,7 @@
   $resultP = mysqli_fetch_array($result);
   foreach ($resultP as $key => $value)
     {
-      echo "User resultP[$key] = $value";
+      echo "User resultP[$key] = $value /n";
     }
   $db = mysqli_close($link); 
 
