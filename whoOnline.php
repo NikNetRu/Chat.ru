@@ -3,7 +3,8 @@
   $dateNow = date("Y-m-d H:i:s");
   $querry = "SELECT ID FROM `users` WHERE `online` BETWEENSTR_TO_DATE('2008-08-14 00:00:00', '%Y-%m-%d %H:%i:%s') 
   AND STR_TO_DATE('2021-08-23 23:59:59', '%Y-%m-%d %H:%i:%s')";
-  $result = mysqli_query($link, $querry);
+  $result = mysqli_query($link, "SELECT ID FROM `users` WHERE `online` BETWEENSTR_TO_DATE('2008-08-14 00:00:00', '%Y-%m-%d %H:%i:%s') 
+  AND STR_TO_DATE('2021-08-23 23:59:59', '%Y-%m-%d %H:%i:%s')");
   foreach ($result as &$stroke)
     {
       echo $stroke;
