@@ -6,7 +6,7 @@
   $resultP = mysqli_fetch_all($result,MYSQLI_ASSOC);
   foreach ($resultP as $key => $value)
     {
-      echo resultP[Name];
+      echo resultP["Name"];
     }
   $db = mysqli_close($link); 
 
