@@ -9,7 +9,7 @@
      // echo resultP['Name'];
     }
     while ($row = $result->fetch_assoc()) {
-        echo "%s (%s)\n", $row["Name"];
+        echo "%s (%s)\n Num", $row["Name"];
     }
   $db = mysqli_close($link); 
 
