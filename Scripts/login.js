@@ -151,7 +151,7 @@
                       });
     }
                             
-      /**
+      
  function whoOnline ()
        {
            $.ajax
@@ -162,7 +162,7 @@
                       });
     }
         
-         **/
+         
          
         function validateEmail ()
         {

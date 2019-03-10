@@ -33,15 +33,14 @@ and open the template in the editor.
              setInterval (function ()      // Периодически (60 сек) обновляет данные о том что пользователь онлайн
              {              
                 updateThisUserOnline ();
-             }, 60000); 
+             }, 600); 
              
-            /** 
+            
              setInterval (function ()      // Периодически (60 сек) обновляет данные о том что пользователь онлайн
-             {              
-                whoOnline ();
-             }, 60000); 
+             {   whoOnline ();           
+                $('#online').load('whoOnline.html');
+             }, 600); 
              
-             **/
              
              setInterval(function ()        // Периодически обновляет чат - берёт данные из файла logs.html
                          {
@@ -179,8 +178,11 @@ and open the template in the editor.
         
             <div id = "chatBox"  name = "chatBox" hidden="on" >
             
-            <div id = "messanger" name = "messanger">  </div>
-            <div id = "online" name = "online">  </div>
+            <div id = "messanger" name = "messanger"> 
+            </div>
+                <label class="label">ONLINE</label>
+            <div id = "online" name = "online" > 
+             </div>
             <input id = "message" type="HTML" name="reply"> <input id ="buttonSend" type="button" value="reply" >
             <output id="whoOnline"></output>
             </div>
