@@ -33,13 +33,13 @@ and open the template in the editor.
              setInterval (function ()      // Периодически (60 сек) обновляет данные о том что пользователь онлайн
              {              
                 updateThisUserOnline ();
-             }, 600); 
+             }, 60000); 
              
             
              setInterval (function ()      // Периодически (60 сек) обновляет данные о том что пользователь онлайн
              {   whoOnline ();           
                 $('#online').load('whoOnline.html');
-             }, 600); 
+             }, 60000); 
              
              
              setInterval(function ()        // Периодически обновляет чат - берёт данные из файла logs.html
