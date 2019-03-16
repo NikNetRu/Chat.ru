@@ -14,15 +14,14 @@ $link = mysqli_connect("127.0.0.1", "root", "", "chat");
      WHERE (Name) = ('$nickname') and (Password) = ('$password')
      LIMIT 1");
    sleep(2);  
-        if ($row = $result->fetch_assoc() ==true) {echo 'alreadyexist'; $db = mysqli_close($link); 
-        } else
-            {
+        if ($result->fetch_assoc()) {echo 'alreadyexist'; $db = mysqli_close($link);} 
+        else
+        {
         $date = date("Y-m-d H:i:s");    
         $result = mysqli_query ($link, "INSERT INTO `users`(`ID`, `Name`, `Password`, `Email`, `RegistrDate`, `Online`) VALUES ('','$nickname','$password','$email','$date','0');");
         setcookie("user", $userAuth);
         $db = mysqli_close($link); 
         echo 'created';
-     
-             }
+        }
     
 

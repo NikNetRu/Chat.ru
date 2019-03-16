@@ -5,38 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    /*include_once 'logs.html';
-    if ($_SERVER['update']==TRUE) {
-    $file = fopen('logs.html','a+');
-    flock($file, LOCK_EX);
-    $message = fgets($file,4096);
-    $convertedText = mb_convert_encoding($message, 'utf-8', mb_detect_encoding($message));
-    flock($file, LOCK_UN);
-    fclose($file);
-    return $convertedText;
-    } 
-
-     * 
-     * 
-     * $lines = file('logs.html');
-$numLines = count($lines)-2;
-if (empty($_SESSION[userLines])) 
-    {
-    setcookie("userLines",$numLines);
-    }
-
-$userNumLines = $_COOKIE[userLines];
-while ($userNumLines != $numLines)
-{       if ($userNumLines >= $numLines) { $userNumLines=$userNumLines-2; }
-        ++$userNumLines;
-        
-        $convertedText = mb_convert_encoding($lines[$userNumLines], 'UTF-8');
-        
-        setcookie("userLines",$userNumLines);
-        echo $convertedText;     */
-
-
-
+//** В Куки пользователя сохраняется последняя строка открытого файла
+//с которой будет сверяется текущее значение строки и выводится построчно, до тех пор пока
+//значения  $userNumLines - пользовательское и $numLines не совпадут**/
 $lines = file('logs.html');
 $numLines = count($lines)-2;
 if (empty($_COOKIE[userLines])) 
@@ -53,5 +24,3 @@ while ($userNumLines != $numLines)
         
         echo "$convertedText";
 }
-
-// echo "USER: $numLines COOKIE: $_COOKIE[userLines]";

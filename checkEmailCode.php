@@ -1,4 +1,5 @@
 <?php
+/*$_SESSION['CodeEmail'] генерируется в generateCodeEmail */
 $userCode = $_POST['userCode'];
 session_start();
 if ($_SESSION['CodeEmail'] == $userCode)
@@ -7,7 +8,6 @@ if ($_SESSION['CodeEmail'] == $userCode)
 
  else 
 {   
-   //echo "wrong Code $userCode";
-   echo $_SESSION['CodeEmail'];
+   echo "Wrong Code";
 }
 

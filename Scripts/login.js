@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/* Инициализация чата (после успещного входа) */
 
 
-            
+            /* Инициализация чата - скрываем загрзку, выводим чат*/
             function chatInit () 
             {   jQuery('#imageLoad').hide(); 
                 jQuery('#chatBox').show();
-            //    jQuery('#messanger').load('logs.html');
             }
             
             
@@ -27,7 +25,7 @@
                                        
                                        
                   /* Показывает все элементы для ввода логина и пароля */                     
-               function showAllElem () {jQuery('#imageLoad').hide();
+               function showAllElem () {    jQuery('#imageLoad').hide();
                                             jQuery('#user').show(); 
                                             jQuery('#insertUser').show();
                                            jQuery('#password').show();
@@ -99,7 +97,7 @@
                
             }
             
-            
+      /* Проверка введённый регистрационных данных*/
             function checkFormReg ()
             {
               errorMess ="";
@@ -107,25 +105,24 @@
               var registrationPassword = $('#registrationPassword').val();
                chekEmptyAZ09 (registrationUser);
                chekEmptyAZ09 (registrationPassword);
-               
              if ($('#registrationRepeatPassword').val() != registrationPassword)
-             {errorMess += "passords not similary"};
+             {errorMess += "passwords not similary"};
              
              var registrationEmail = $('#registrationEmail').val();  // проверка майла на соотвествиие
              if (!/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i.test(registrationEmail))
              {errorMess="No Correct Email";};
-             
             return errorMess;
-             
             }
             
                 function chekEmptyAZ09 (data) {     // проверка на пустоту и символы
                 if (data  == "") {errorMess += "is Empty <br>";};
-                if (/[^a-zA-Z0-9_-]/.test(data )) {errorMess += "Only A-Z 0-9 _ in NikName <br>";};
+                if (/[^a-zA-Z0-9_-]/.test(data )) {errorMess += "Only A-Z 0-9 _ in NikName and Password <br>";};
                 return errorMess;
                 }  
                 
           
+          
+          /*Отсылка проверочного кода на Email*/
          function sendCodeEmail ()
          {
              $.ajax
@@ -136,8 +133,6 @@
                                                });
          
                       } ;
-         
-         
          
          
          
@@ -152,7 +147,8 @@
     }
                             
       
- function whoOnline ()
+      
+       function whoOnline ()
        {
            $.ajax
                     ({
@@ -163,7 +159,7 @@
     }
         
          
-         
+         /*Запрос сделан в XML, для отсылки введёного пользователем кода высланного на Email результатт проверки выводится в errorReg*/
         function validateEmail ()
         {
                 
@@ -175,7 +171,7 @@
               xhr.onload = function () {
               if (xhr.readyState === xhr.DONE) {
               if (xhr.status === 200) {
-              console.log(xhr.responseText);
+              console.log(xhr.responseText); // !! ТОЛЬКО ДЛЯ УПРОЩЕНИЯ РЕГИСТРАЦИИ выводит проверочный код
               document.getElementById("errorReg").value=xhr.responseText;
             }};};  
             
