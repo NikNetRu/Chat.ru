@@ -161,7 +161,9 @@
          
          /*Запрос сделан в XML, для отсылки введёного пользователем кода высланного на Email результатт проверки выводится в errorReg*/
         function validateEmail ()
-        {
+        {       
+           return new Promise (function(resolve,reject)
+           {
                 
               xhr = new XMLHttpRequest();
               xhr.open('POST', 'checkEmailCode.php', true);
@@ -172,22 +174,26 @@
               if (xhr.readyState === xhr.DONE) {
               if (xhr.status === 200) {
               console.log(xhr.responseText); // !! ТОЛЬКО ДЛЯ УПРОЩЕНИЯ РЕГИСТРАЦИИ выводит проверочный код
-              document.getElementById("errorReg").value=xhr.responseText;
-            }};};  
-            
+              resolve(xhr.responseText);
+            }}
+                reject(Error(xhr.statusText));};  
+            });
                       } ;   
                       
       function registerUser ()
          {                      
-                       
+                       return new Promise (function (resolve,reject)
+                       {
                                 xhReg = new XMLHttpRequest();
                                 xhReg.open('POST', 'registerUser.php', true);
                                  xhReg.responseType = 'text';
                                  xhReg.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                                 xhReg.send('registrationUser='+encodeURIComponent($('#registrationUser').val())+'&registrationPassword'+encodeURIComponent($('#registrationPassword').val())+'&registrationEmail'+encodeURIComponent($('#registrationEmail').val()));
+                                 xhReg.send('registrationUser='+encodeURIComponent($('#registrationUser').val())+'&registrationPassword='+encodeURIComponent($('#registrationPassword').val())+'&registrationEmail='+encodeURIComponent($('#registrationEmail').val()));
                                  xhReg.onload = function () {
                                  if (xhReg.readyState === xhReg.DONE) {
                                  if (xhReg.status === 200) {
                                 console.log(xhReg.responseText);
-                                 document.getElementById("errorForm").value=xhReg.responseText;}};};  
+                                resolve(xhReg.responseText);}
+                                reject(Error(xhReg.statusText));};};
+                       });
                  }

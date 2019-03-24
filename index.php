@@ -84,37 +84,34 @@ and open the template in the editor.
                             var errorMess = checkFormReg ();  //проверяет введённые данные пользователя
                             if (errorMess === "") 
                                 { 
-                                    validateEmail (); //проверяет код введённые пользоателем сравнивая значение введённое пользователем со значением хранимым на сервере выводит в errorReg результат
-                                    setTimeout(function () // задержка для выполнения validateEmail () (P.S. Реализовать через промисы не получилось, переписать позже)
-                                        {
-                                            if (document.getElementById("errorReg").value === "Sucess") //в errorReg записан результат выполнеения validateEmail ()
+                                    validateEmail().then(function(response) //проверяет код введённые пользоателем сравнивая значение введённое пользователем со значением хранимым на сервере выводит в errorReg результат
+                                    {
+                                            if (response === "Sucess") //в errorReg записан результат выполнеения validateEmail ()
                                                    {
                                                     jQuery('#imageLoad').show();   
                                                     document.getElementById("status").value="Registration";
                                                     jQuery('#registrationInput').hide();  //скрываем все формы, и показываем загрузку
                                                     jQuery('#registrationFormLabel').hide();
-                                                    registerUser ();
-                                                    setTimeout (function () //для выполнения registerUser (); требуется время, далее по результату функции registerUser выполняется заключительная часть
-                                                                    {
-                                                                    if (document.getElementById("errorForm").value === "created") 
+                                                    registerUser().then(function(response)
+                                                    {
+                                                        if (response === "created") 
                                                                          { 
                                                                              document.getElementById("status").value="Sucess";
                                                                              alert ("Sucess"); 
                                                                              jQuery('#imageLoad').hide();
                                                                              showAllElem ();
                                                                          }
-                                                                    if (document.getElementById("errorForm").value === "alreadyexist") 
+                                                                    if (response === "alreadyexist") 
                                                                         { 
                                                                             document.getElementById("status").value="alreadyexist"; 
                                                                             alert ("Already Exist");jQuery('#registrationInput').show();
                                                                             jQuery('#registrationFormLabel').show();jQuery('#imageLoad').hide();
-                                                                        }    
-                                                                    }, 3000);          
-                                                     } 
-                                                     else {alert(errorMess+'wrongCode');} // если код введён неверно вывод информации об  этом
-                                          }
-                                                    ,1000 );
-                                }
+                                                                        }         
+                                                     }, function(reject){alert(errorMess+'wrongCode'+reject);}); 
+                                                 }
+                                                 else {alert ('WrongCode');}
+                                });
+                                 }
                                   else {alert (errorMess+'repeat');}    //если errorMess всё таки не пустой
                               });
                                                          
